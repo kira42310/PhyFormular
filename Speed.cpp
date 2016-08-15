@@ -2,9 +2,9 @@
 
 using namespace std;
 
-double velocity(double distance, double time)
+double velocity(double deltaDistance, double time)
 {
-	return distance/time;
+	return deltaDistance/time;
 }
 
 double velocity(double distance2, double distance1, double time2, double time1 = 0)
@@ -12,9 +12,9 @@ double velocity(double distance2, double distance1, double time2, double time1 =
 	return (distance2-distance1)/(time2-time1);
 }
 
-double acceleration(double velocity, double time)
+double acceleration(double deltaVelocity, double time)
 {
-	return velocity/time;
+	return deltaVelocity/time;
 }
 
 double acceleration(double velocity2, double velocity1, double time2, double time1 = 0 )
@@ -32,7 +32,11 @@ double distance(double velocity, double time, double distanceInit = 0 )
 	return ( velocity * time ) + distanceInit;
 }
 
-double timeByVelocity(double distance
+double timeByVelocity(double distance, double velocity)
+{
+	return distance / velocity;
+}
+
 int main()
 {
 	cout << velocity(12,4) << endl;
